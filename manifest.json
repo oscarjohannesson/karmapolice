@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Karma police",
+    "version": "1.0",
+    "description": "Stores karma user settings inside chromes localStorage for extensions.",
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+      ],
+    "permissions": [ "storage",
+
+    "storage",
+    "activeTab"],
+    "action": {
+        "default_popup": "popup.html",
+      "default_icon": "yin_yang.png",
+      "default_title": "Karma police"
+
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+      ]
+  }
+  
